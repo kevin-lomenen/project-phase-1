@@ -3,29 +3,24 @@ if (document.readyState == 'loading') {
   } else {
     ready()
   }
-  
   function ready() {
     const removeCartItemButtons = document.getElementsByClassName('btn-danger')
     for ( let i = 0; i < removeCartItemButtons.length; i++) {
         let button = removeCartItemButtons[i]
         button.addEventListener('click', removeCartItem)
     }
-  
     const quantityInputs = document.getElementsByClassName('cart-quantity-input')
     for (let i = 0; i < quantityInputs.length; i++) {
       let input = quantityInputs[i]
         input.addEventListener('change', quantityChanged)
     }
-  
     const  addToCartButtons = document.getElementsByClassName('shop-item-button')
     for (let i = 0; i < addToCartButtons.length; i++) {
       let button = addToCartButtons[i]
         button.addEventListener('click', addToCartClicked)
     }
-  
     document.getElementsByClassName('btn-purchase')[0].addEventListener('click', purchaseClicked)
   }
-  
   function purchaseClicked() {
     alert('Thank you for your purchase')
     const  cartItems = document.getElementsByClassName('cart-items')[0]
@@ -34,13 +29,11 @@ if (document.readyState == 'loading') {
     }
     updateCartTotal()
   }
-  
   function removeCartItem(event) {
    const  buttonClicked = event.target
     buttonClicked.parentElement.parentElement.remove()
     updateCartTotal()
   }
-  
   function quantityChanged(event) {
     const input = event.target
     if (isNaN(input.value) || input.value <= 0) {
@@ -48,7 +41,6 @@ if (document.readyState == 'loading') {
     }
     updateCartTotal()
   }
-  
   function addToCartClicked(event) {
    let button = event.target
    let shopItem = button.parentElement.parentElement
@@ -58,7 +50,6 @@ if (document.readyState == 'loading') {
     addItemToCart(title, price, imageSrc)
     updateCartTotal()
   }
-  
   function addItemToCart(title, price, imageSrc) {
    let cartRow = document.createElement('div')
     cartRow.classList.add('cart-row')
@@ -85,7 +76,6 @@ if (document.readyState == 'loading') {
     cartRow.getElementsByClassName('btn-danger')[0].addEventListener('click', removeCartItem)
     cartRow.getElementsByClassName('cart-quantity-input')[0].addEventListener('change', quantityChanged)
   }
-  
   function updateCartTotal() {
    let cartItemContainer = document.getElementsByClassName('cart-items')[0]
    let cartRows = cartItemContainer.getElementsByClassName('cart-row')
@@ -126,6 +116,5 @@ if (document.readyState == 'loading') {
       li.appendChild(document.createTextnode(item));
       li.setAttribute('id',$[item])
       info.appendParent(li);
-      
     })
   }
