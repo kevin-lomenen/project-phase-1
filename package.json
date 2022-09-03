@@ -1,0 +1,22 @@
+{
+  "name": "project-phase-1",
+  "version": "1.0.0",
+  "description": "API INSTALL FOR PROJECT",
+  "main": "script.js",
+  "scripts": {
+    "json:server": "json-server --watch db.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kevin-lomenen/project-phase-1.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kevin-lomenen/project-phase-1/issues"
+  },
+  "homepage": "https://github.com/kevin-lomenen/project-phase-1#readme",
+  "dependencies": {
+    "json-server": "^0.17.0"
+  }
+}
